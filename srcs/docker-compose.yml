@@ -14,4 +14,7 @@ services:
     restart: always
     env_file:
       - .env
-
+    volumes:
+      - mariadb:/var/lib/mysql
+volumes:
+  mariadb:
