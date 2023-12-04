@@ -1,4 +1,5 @@
 up : 
+	docker system prune -f
 	@docker-compose -f ./srcs/docker-compose.yml up --build -d
 
 down : 

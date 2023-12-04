@@ -7,5 +7,7 @@ echo "USE rachid; GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$USERNAME'@'localhost' 
 echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '$ROOT_PASS' ;" >> db1.sql
 echo "FLUSH PRIVILEGES;" >> db1.sql
 mysql < db1.sql
-kill $(cat /var/run/mysqld/mysqld.pid)
+service mariadb stop
 mysqld -u root
+
+tail -f
