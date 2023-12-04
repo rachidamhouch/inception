@@ -27,7 +27,7 @@ services:
   wordpress:
     container_name: wordpress
     build: ./services/wordpress/.
-    # restart: always
+    restart: always
     depends_on:
       - mariadb
     ports:

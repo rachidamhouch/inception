@@ -4,7 +4,8 @@ FROM debian:latest
 COPY ./script.sh /
 RUN chmod +x script.sh
 RUN ./script.sh
-# COPY ./config /var/www/html/wordpress/wp-config.php
+COPY ./run.sh /
+RUN chmod +x run.sh
 
-ENTRYPOINT ["php-fpm8.2", "-F"]
+ENTRYPOINT ["bash", "run.sh"]
  
