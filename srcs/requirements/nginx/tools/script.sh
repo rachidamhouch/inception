@@ -1,9 +1,5 @@
 #!/bin/bash
 
-apt update -y
-apt install nginx -y
-apt install openssl -y
-
 mkdir /etc/nginx/ssl
 
 openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-apt update -y
-apt install php-fpm php-mysql wget -y
 mkdir /var/www/
 mkdir /var/www/html
 mkdir /var/www/html/wordpress
@@ -13,4 +10,3 @@ mv wp-cli.phar /usr/local/bin/wp
 
 wp --allow-root core download
 sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
-
