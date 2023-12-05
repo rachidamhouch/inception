@@ -41,7 +41,16 @@ services:
 
 volumes:
   mariadb:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/ramhouch/data/mariadb
   wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/ramhouch/data/wordpress
 networks:
   inception:
-    driver: bridge
