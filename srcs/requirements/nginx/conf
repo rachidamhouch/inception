@@ -1,7 +1,7 @@
 server {
 
 	listen 80;
-	server_name www.ramhouch.1337.ma ramhouch.1337.ma;
+	server_name www.ramhouch.42.fr ramhouch.42.fr;
 	return 301 https://$host$request_uri;
 
 }
@@ -9,7 +9,7 @@ server {
 server {
 
 	listen 443 ssl;
-	server_name www.ramhouch.1337.ma ramhouch.1337.ma;
+	server_name www.ramhouch.42.fr ramhouch.42.fr;
 	
 	ssl_certificate /etc/nginx/ssl/ramhouch.pem;
 	ssl_certificate_key /etc/nginx/ssl/ramhouch.key;
