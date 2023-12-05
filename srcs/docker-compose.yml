@@ -53,6 +53,16 @@ services:
     build: ./requirements/bonus/websites/.
     ports:
       - "3000:3000"
+  cadvisor:
+    container_name: cadvisor
+    build: ./requirements/bonus/cadvisor/.
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker:/var/lib/docker:ro
 
 volumes:
   mariadb:
