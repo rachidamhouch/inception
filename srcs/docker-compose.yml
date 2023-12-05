@@ -38,7 +38,16 @@ services:
       - wordpress:/var/www/html
     networks:
       - inception
-
+  ftp:
+    container_name: ftp
+    build: ./requirements/bonus/ftp/.
+    ports:
+      - "21:21"
+      - "20:20"
+    volumes:
+      - wordpress:/var/www/html
+    env_file:
+      - .env
 volumes:
   mariadb:
     driver: local
