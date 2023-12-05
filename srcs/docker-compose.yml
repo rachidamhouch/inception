@@ -48,6 +48,12 @@ services:
       - wordpress:/var/www/html
     env_file:
       - .env
+  websites:
+    container_name: websites
+    build: ./requirements/bonus/websites/.
+    ports:
+      - "3000:3000"
+
 volumes:
   mariadb:
     driver: local
