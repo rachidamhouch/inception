@@ -27,6 +27,11 @@ server {
      	fastcgi_pass wordpress:9000;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_param REDIS_HOST redis;
+        fastcgi_param REDIS_PORT 6379;
+        fastcgi_param WP_CACHE_KEY_SALT your_unique_salt; # replace with a unique salt
+        fastcgi_param WP_CACHE_TIMEOUT 3600; # set your preferred cache timeout
+        fastcgi_param WP_CACHE true;
     }
 
 }

@@ -76,6 +76,14 @@ services:
     restart: always
     networks:
       - inception
+  redis:
+    container_name: redis
+    build: ./requirements/bonus/redis/.
+    env_file:
+      - .env
+    restart: always
+    networks:
+      - inception
 
 volumes:
   mariadb:
