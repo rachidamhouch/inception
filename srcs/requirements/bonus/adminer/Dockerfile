@@ -1,6 +1,6 @@
 FROM debian:stable
 
-RUN apt-get update && apt install -y wget php php-mysql 
+RUN apt-get update && apt install -y wget php php-mysql && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
 

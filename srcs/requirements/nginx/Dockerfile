@@ -1,6 +1,6 @@
 FROM debian:stable
 
-RUN apt update -y && apt install nginx -y && apt install openssl -y
+RUN apt update -y && apt install -y nginx openssl && rm -rf /var/lib/apt/lists/*
 
 COPY ./tools/script.sh /
 

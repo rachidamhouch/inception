@@ -1,6 +1,6 @@
 FROM debian:stable
 
-RUN apt update -y && apt install php-fpm php-mysql wget -y
+RUN apt update -y && apt install php-fpm php-mysql wget -y && rm -rf /var/lib/apt/lists/*
 
 COPY ./tools/script.sh /
 
