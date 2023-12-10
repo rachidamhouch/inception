@@ -1,11 +1,11 @@
 FROM debian:stable
 
-RUN apt update -y && apt install -y git nodejs npm && rm -rf /var/lib/apt/lists/*
+RUN apt update -y && apt install -y nodejs npm && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/rachidamhouch/weatherApp
+WORKDIR /app
 
-WORKDIR /weatherApp
+COPY . .
 
-RUN npm i
+RUN npm init -y && npm i express
 
 ENTRYPOINT ["node", "app.js"]

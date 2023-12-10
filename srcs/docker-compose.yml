@@ -8,7 +8,6 @@ services:
       - wordpress
     ports:
      - "443:443"
-     - "80:80"
     restart: always
     volumes:
      - wordpress:/var/www/html
