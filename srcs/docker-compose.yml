@@ -3,6 +3,7 @@ version: "3.5"
 services:
   nginx:
     container_name: nginx
+    image: nginx
     build: ./requirements/nginx/.
     depends_on:
       - wordpress
@@ -15,6 +16,7 @@ services:
       - inception
   mariadb:
     container_name: mariadb
+    image: mariadb
     build: ./requirements/mariadb/.
     restart: always
     env_file:
@@ -25,6 +27,7 @@ services:
       - inception
   wordpress:
     container_name: wordpress
+    image: wordpress
     build: ./requirements/wordpress/.
     restart: always
     depends_on:
@@ -37,6 +40,7 @@ services:
       - inception
   ftp:
     container_name: ftp
+    image: ftp
     build: ./requirements/bonus/ftp/.
     ports:
       - "21:21"
@@ -48,12 +52,14 @@ services:
     restart: always
   websites:
     container_name: websites
+    image: websites
     build: ./requirements/bonus/websites/.
     ports:
       - "3000:3000"
     restart: always
   cadvisor:
     container_name: cadvisor
+    image: cadvisor
     build: ./requirements/bonus/cadvisor/.
     ports:
       - "8080:8080"
@@ -65,6 +71,7 @@ services:
     restart: always
   adminer:
     container_name: adminer
+    image: adminer
     build: ./requirements/bonus/adminer/.
     ports:
       - "5000:5000"
@@ -75,6 +82,7 @@ services:
       - inception
   redis:
     container_name: redis
+    image: redis
     build: ./requirements/bonus/redis/.
     env_file:
       - .env
