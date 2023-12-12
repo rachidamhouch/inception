@@ -3,12 +3,9 @@ const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
-});
 
 app.get("*",async (req, res) => {
-    res.sendFile(__dirname + '/views/404.html');
+    res.status(404).send('<h1 style="text-align:center">404: Page not found</h1>')
 })
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

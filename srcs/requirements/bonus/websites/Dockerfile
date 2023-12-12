@@ -1,11 +1,13 @@
 FROM debian:stable
 
-RUN apt update -y && apt install -y nodejs npm && rm -rf /var/lib/apt/lists/*
+RUN apt update -y && apt install -y nodejs npm git && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY . .
+COPY ./app.js .
+
+RUN git clone https://github.com/rachidamhouch/simonGame public
 
 RUN npm init -y && npm i express
 
-ENTRYPOINT ["node", "app.js"]
+CMD ["node", "app.js"]
