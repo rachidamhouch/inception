@@ -44,7 +44,6 @@ services:
     build: ./requirements/bonus/ftp/.
     ports:
       - "21:21"
-      - "20:20"
     volumes:
       - wordpress:/var/www/html
     env_file:
